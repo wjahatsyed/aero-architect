@@ -5,6 +5,10 @@ spring:
   application:
     name: booking-service
 
+  cloud:
+    config:
+      enabled: false
+
   datasource:
     url: jdbc:postgresql://localhost:5432/aero_architect_bookings
     username: postgres
@@ -22,6 +26,12 @@ spring:
   sql:
     init:
       mode: always
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
