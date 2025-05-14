@@ -55,3 +55,6 @@ management:
     web:
       exposure:
         include: "*"
+
+jwt:
+  secret: 6851902-smw-sma-khi-pk-ksa-6851902-289394-kfu-pm-31261-dmm
