@@ -16,11 +16,21 @@ spring:
           uri: lb://booking-service
           predicates:
             - Path=/api/bookings/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: bookingServiceCB
+                fallbackUri: forward:/fallback/booking
 
         - id: flight-service
           uri: lb://flight-service
           predicates:
             - Path=/api/flights/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: flightServiceCB
+                fallbackUri: forward:/fallback/flight
 
         - id: notification-service
           uri: lb://notification-service
