@@ -19,7 +19,7 @@ public class JwtUtil {
 
     @PostConstruct
     public void init() {
-        key = Keys.hmacShaKeyFor(secret.getBytes());
+        key = Keys.hmacShaKeyFor(java.util.Base64.getDecoder().decode(secret));
     }
 
     public boolean validateToken(String token) {

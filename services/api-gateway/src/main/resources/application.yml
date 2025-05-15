@@ -57,4 +57,5 @@ management:
         include: "*"
 
 jwt:
-  secret: 6851902-smw-sma-khi-pk-ksa-6851902-289394-kfu-pm-31261-dmm
+  secret: Njg1MTkwMi1zbXctc21hLWtoaS1way1rc2EtNjg1MTkwMi0yODkzOTQta2Z1LXBtLTMxMjYxLWRtbQ==
+
