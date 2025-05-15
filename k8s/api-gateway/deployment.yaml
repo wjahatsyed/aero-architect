@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+  labels:
+    app: api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+    spec:
+      containers:
+        - name: api-gateway
+          image: api-gateway
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8090
+          env:
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              value: http://eureka-server:8762/eureka
+            - name: JWT_SECRET
+              value: Njg1MTkwMi1zbXctc21hLWtoaS1way1rc2EtNjg1MTkwMi0yODkzOTQta2Z1LXBtLTMxMjYxLWRtbQ==
